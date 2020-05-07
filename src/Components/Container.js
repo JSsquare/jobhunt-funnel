@@ -75,8 +75,8 @@ class Container extends React.Component {
                 </Paper>
             </Grid>
 
-            <Grid item xs={12} className="paper-stage">
-                <Paper elevation={3} >
+            <Grid item xs={12} >
+                <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>Out Of {this.props.propState.onsiteinterview} Tech/Phone Interviews. How Many Do You Think Will Advance To An Onsite Interview?</Grid>
                     <Grid item xs={12}><Slider id="onsiteinterview-input"
