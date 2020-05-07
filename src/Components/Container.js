@@ -1,5 +1,6 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Grid from "@material-ui/core/Grid";
 import Slider from '@material-ui/core/Slider';
 import '../App.css';
@@ -14,7 +15,7 @@ class Container extends React.Component {
             onsiteinterviewValue: 0,
             offerValue: 0,
         }; 
-        this.stageChange = this.stageChange.bind(this);       
+        this.stageChange = this.stageChange.bind(this);     
     }
     stageChange = sliderName => (e, newValue) => {        
         if(sliderName === 'applications-input') {
@@ -31,52 +32,83 @@ class Container extends React.Component {
         this.props.stageChange(newValue, sliderName);
     }    
     render(){        
-        return (            
-              <Grid container spacing={3} sm={6}   alignItems="center" justify="center" >
-              <Grid item xs={12}>Number Of Jobs I Applied {this.localValues.applicationValue}              
-                  <Slider id="applications-input"
-                      min={0}
-                      max={500}
-                      value={this.localValues.applicationValue}
-                      onChange={this.stageChange('applications-input')}/>
-               </Grid>       
+        return ( 
+            <Paper elevation={6} className="paper-container">              
+             <Grid container spacing={3} xs={10}  alignItems="center" justify="center" >
+                <Grid item xs={12} >
+                    <Paper elevation={3} className="paper-stage"> 
+                        <Grid container spacing={2}>
+                            <Grid item xs={12}>Number Of Jobs I Applied {this.localValues.applicationValue}</Grid>                        
+                            <Grid item xs={12}><Slider id="applications-input"
+                                min={0}
+                                max={500}
+                                value={this.localValues.applicationValue}
+                                onChange={this.stageChange('applications-input')}/>                        
+                            </Grid>
+                        </Grid>   
+                    </Paper>
+               </Grid> 
 
-            <Grid item xs={12}>Out Of {this.props.propState.recruiterscreen} Applied. How Many Do You Think Will Advance To A Recruiter Screen?            
-             <Slider id="recruiterscreen-input"
-                     min={0}
-                     max={this.props.propState.recruiterscreen}
-                     value={this.localValues.recruiterscreenValue}
-                     onChange={this.stageChange('recruiterscreen-input')}/>
+            <Grid item xs={12}>
+                <Paper elevation={3} className="paper-stage">
+                <Grid container spacing={2}>                    
+                    <Grid item xs={12}>Out Of {this.props.propState.recruiterscreen} Applied. How Many Do You Think Will Advance To A Recruiter Screen?</Grid>
+                        <Slider id="recruiterscreen-input"
+                                min={0}
+                                max={this.props.propState.recruiterscreen}
+                                value={this.localValues.recruiterscreenValue}
+                                onChange={this.stageChange('recruiterscreen-input')}/>
+                </Grid>            
+                </Paper>
             </Grid>
-            <Grid item xs={12}>Out Of {this.props.propState.phoneinterview} Recruiter Screens. How Many Do You Think Will Advance To Tech/Phone Interview?
-            <Slider id="phoneinterview-input"
-                    min={0}
-                    max={this.props.propState.phoneinterview}
-                    value={this.localValues.phoneinterviewValue}
-                    onChange={this.stageChange('phoneinterview-input')}/>
+            <Grid item xs={12}>
+                <Paper elevation={3} className="paper-stage">
+                <Grid container spacing={2}>  
+                    <Grid item xs={12}>Out Of {this.props.propState.phoneinterview} Recruiter Screens. How Many Do You Think Will Advance To Tech/Phone Interview?</Grid>
+                    <Grid item xs={12}><Slider id="phoneinterview-input"
+                            min={0}
+                            max={this.props.propState.phoneinterview}
+                            value={this.localValues.phoneinterviewValue}
+                            onChange={this.stageChange('phoneinterview-input')}/>
+                    </Grid>
+                </Grid>
+                </Paper>
             </Grid>
 
-            <Grid item xs={12}>Out Of {this.props.propState.onsiteinterview} Tech/Phone Interview. How Many Do You Think Will Advance To An Onsite Interview?
-            <Slider id="onsiteinterview-input"
-                    min={0}
-                    max={this.props.propState.onsiteinterview}
-                    value={this.localValues.onsiteinterviewValue}
-                    onChange={this.stageChange('onsiteinterview-input')}/>
+            <Grid item xs={12}>
+                <Paper elevation={3} className="paper-stage">
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>Out Of {this.props.propState.onsiteinterview} Tech/Phone Interview. How Many Do You Think Will Advance To An Onsite Interview?</Grid>
+                    <Grid item xs={12}><Slider id="onsiteinterview-input"
+                            min={0}
+                            max={this.props.propState.onsiteinterview}
+                            value={this.localValues.onsiteinterviewValue}
+                            onChange={this.stageChange('onsiteinterview-input')}/>
+                    </Grid>
+                </Grid>
+                </Paper>
             </Grid>
 
-            <Grid item xs={12}>You Have {this.props.propState.offer} Onsites. What Is Your Gut Feeling?
-            <Slider id="offer-input"
-                    min={0}
-                    max={this.props.propState.offer}
-                    value={this.localValues.offerValue}
-                    onChange={this.stageChange('offer-input')}/>
+            <Grid item xs={12}>
+                <Paper elevation={3} className="paper-stage">
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>You Have {this.props.propState.offer} Onsites. What Is Your Gut Feeling About Advancing Through?</Grid>
+                    <Grid item xs={12}><Slider id="offer-input"
+                                min={0}
+                                max={this.props.propState.offer}
+                                value={this.localValues.offerValue}
+                                onChange={this.stageChange('offer-input')}/> 
+                    </Grid>              
+                    </Grid>
+                </Paper>
             </Grid>
 
             {this.props.propState.final > 0 ? 
                 <p>YAY! You Have {this.props.propState.final} Offer{this.props.propState.final > 1 ? 's': null}</p>
                 : null
             }                  
-            </Grid>        
+            </Grid>
+            </Paper>     
         )
     }
 }

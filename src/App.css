@@ -3,17 +3,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.paper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 700px; 
+  width: 800px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.paper-stage {
+  display: flex; 
+  padding: 10px; 
 }
 
 .App-header {

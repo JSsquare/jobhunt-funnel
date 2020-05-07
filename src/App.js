@@ -11,7 +11,24 @@ class App extends React.Component {
       phoneinterview: 0,
       onsiteinterview: 0,
       offer: 0,
-      final: 0    
+      final: 0,
+      marks: [
+        {
+          value: 0,
+          label: '0%',
+        },
+        {
+          value: 0,
+          label: '25%',
+        },
+        {
+          value: 0,
+          label: '75%',
+        },
+        {
+          value: 0,
+          label: '100%',
+        },]   
     };
     this.handleStageChange = this.handleStageChange.bind(this);
   }
@@ -27,15 +44,15 @@ class App extends React.Component {
     } else if(stage === 'onsiteinterview-input'){
       this.setState({offer: value});
     } else if(stage === 'offer-input'){
-      this.setState({final: value});
+      this.setState({final: value});      
     }
   }
 
   render() {    
-    return (
-      <div className="App">
-        <Container propState={this.state} stageChange={this.handleStageChange}/>
-      </div>
+    return (      
+        <div className="App">
+          <Container propState={this.state} stageChange={this.handleStageChange}/>
+        </div>        
     );
   }
 
