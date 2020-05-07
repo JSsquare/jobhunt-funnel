@@ -75,14 +75,14 @@ class Container extends React.Component {
                 </Paper>
             </Grid>
 
-            <Grid item xs={12}>
-                <Paper elevation={3} className="paper-stage">
+            <Grid item xs={12} className="paper-stage">
+                <Paper elevation={3} >
                 <Grid container spacing={2}>
-                    <Grid item xs={12}>Out Of {this.props.propState.onsiteinterview} Tech/Phone Interview. How Many Do You Think Will Advance To An Onsite Interview?</Grid>
+                    <Grid item xs={12}>Out Of {this.props.propState.onsiteinterview} Tech/Phone Interviews. How Many Do You Think Will Advance To An Onsite Interview?</Grid>
                     <Grid item xs={12}><Slider id="onsiteinterview-input"
                             min={0}
                             max={this.props.propState.onsiteinterview}
-                            value={this.localValues.onsiteinterviewValue}
+                            value={this.localValues.onsiteinterviewValue}                            
                             onChange={this.stageChange('onsiteinterview-input')}/>
                     </Grid>
                 </Grid>
@@ -92,11 +92,14 @@ class Container extends React.Component {
             <Grid item xs={12}>
                 <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>
-                    <Grid item xs={12}>You Have {this.props.propState.offer} Onsites. What Is Your Gut Feeling About Advancing Through?</Grid>
+                    <Grid item xs={12}>Now You Have {this.props.propState.offer} Onsites. What's Your Gut Feeling To Advance Through?</Grid>
                     <Grid item xs={12}><Slider id="offer-input"
                                 min={0}
                                 max={this.props.propState.offer}
                                 value={this.localValues.offerValue}
+                                marks={this.props.propState.isMarked ? this.props.propState.marks : null}
+                                valueLabelDisplay="auto"
+                                step={null}
                                 onChange={this.stageChange('offer-input')}/> 
                     </Grid>              
                     </Grid>
