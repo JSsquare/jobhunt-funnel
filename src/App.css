@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
   margin: 40px 0px 40px 0px;
+  font-family: 'Raleway', sans-serif;
+}
+.digit {
+  font-family: 'Poppins', sans-serif;  
 }
 .paper-container {
   display: flex;

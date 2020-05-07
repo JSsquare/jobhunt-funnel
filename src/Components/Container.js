@@ -38,7 +38,7 @@ class Container extends React.Component {
                 <Grid item xs={12} >
                     <Paper elevation={3} className="paper-stage"> 
                         <Grid container spacing={2}>
-                            <Grid item xs={12}>Number Of Jobs I Applied {this.localValues.applicationValue}</Grid>                        
+                            <Grid item xs={12}>How Many Jobs Did I Apply? <span className="digit">{this.localValues.applicationValue}</span></Grid>
                             <Grid item xs={12}><Slider id="applications-input"
                                 min={0}
                                 max={500}
@@ -52,7 +52,7 @@ class Container extends React.Component {
             <Grid item xs={12}>
                 <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>                    
-                    <Grid item xs={12}>Out Of {this.props.propState.recruiterscreen} Applied. How Many Do You Think Will Advance To A Recruiter Screen?</Grid>
+                    <Grid item xs={12}>Out Of <span className="digit">{this.props.propState.recruiterscreen}</span> Applied. How Many Do You Think Will Advance To A Recruiter Screen?</Grid>
                         <Slider id="recruiterscreen-input"
                                 min={0}
                                 max={this.props.propState.recruiterscreen}
@@ -92,7 +92,7 @@ class Container extends React.Component {
             <Grid item xs={12}>
                 <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>
-                    <Grid item xs={12}>Now You Have {this.props.propState.offer} Onsites. What's Your Gut Feeling To Advance Through?</Grid>
+                    <Grid item xs={12}>Now You Have {this.props.propState.offer} Onsite Interviews. What's Your Gut Feeling To Advance Through?</Grid>
                     <Grid item xs={12}><Slider id="offer-input"
                                 min={0}
                                 max={this.props.propState.offer}
