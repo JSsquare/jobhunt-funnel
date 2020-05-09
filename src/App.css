@@ -7,7 +7,14 @@
   font-family: 'Raleway', sans-serif;
 }
 .digit {
-  font-family: 'Poppins', sans-serif;  
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  color: green;
+  padding: 0px 10px 0px 10px;
+}
+.stage {
+  font-weight: 900;
+  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);  
 }
 .paper-container {
   display: flex;

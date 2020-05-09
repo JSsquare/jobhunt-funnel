@@ -1,5 +1,7 @@
 import React from 'react';
+import Snackbar from "@material-ui/core/Snackbar";
 import Container from './Components/Container';
+import OfferSnackBar from './Components/OfferSnackBar';
 import './App.css';
 
 class App extends React.Component {
@@ -80,6 +82,7 @@ class App extends React.Component {
   render() {    
     return (      
         <div className="App">
+          <OfferSnackBar offers={this.state.final > 0} offerNumber={this.state.final}/>
           <Container propState={this.state} stageChange={this.handleStageChange}/>
         </div>        
     );
