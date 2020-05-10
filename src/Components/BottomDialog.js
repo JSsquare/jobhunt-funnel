@@ -7,6 +7,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -38,13 +40,11 @@ export default function BottomDialog() {
       >        
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            Built by Johnny with React
+            built by <a href="http://www.twitter.com/HandleChanger" target="_blank">Johnny<TwitterIcon style={{ fontSize: 18 }}></TwitterIcon></a> with React
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Perfect!
-          </Button>
+          <ArrowDownwardIcon onClick={handleClose} color="primary"></ArrowDownwardIcon>
         </DialogActions>
       </Dialog>
     </div>
