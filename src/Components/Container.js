@@ -69,7 +69,7 @@ class Container extends React.Component {
                             </Grid>
                             <Grid item xs={2}>
                                 <Input                                    
-                                    value={this.localValues.applicationValue}
+                                    value={this.localValues.applicationValue}                                    
                                     margin="dense"
                                     id="applications-stage"
                                     onChange={this.inputStageChange}
@@ -100,6 +100,7 @@ class Container extends React.Component {
                     <Grid item xs={2}>
                                 <Input                                    
                                     value={this.localValues.recruiterscreenValue}
+                                    disabled={this.localValues.applicationValue === 0 ? true : null}
                                     margin="dense"
                                     id="recruiterscreen-stage"
                                     onChange={this.inputStageChange}
@@ -107,7 +108,7 @@ class Container extends React.Component {
                                     inputProps={{
                                     step: 10,
                                     min: 0,
-                                    max: 500,
+                                    max: this.localValues.applicationValue,
                                     type: "number",
                                     "aria-labelledby": "input-slider"
                                     }}
@@ -130,6 +131,7 @@ class Container extends React.Component {
                     <Grid item xs={2}>
                                 <Input                                    
                                     value={this.localValues.phoneinterviewValue}
+                                    disabled={this.localValues.recruiterscreenValue === 0 ? true : null}
                                     margin="dense"
                                     id="phoneinterview-stage"
                                     onChange={this.inputStageChange}
@@ -137,7 +139,7 @@ class Container extends React.Component {
                                     inputProps={{
                                     step: 10,
                                     min: 0,
-                                    max: 500,
+                                    max: this.localValues.recruiterscreenValue,
                                     type: "number",
                                     "aria-labelledby": "input-slider"
                                     }}
@@ -160,6 +162,7 @@ class Container extends React.Component {
                     <Grid item xs={2}>
                                 <Input                                    
                                     value={this.localValues.onsiteinterviewValue}
+                                    disabled={this.localValues.phoneinterviewValue === 0 ? true : null}
                                     margin="dense"
                                     id="onsiteinterview-stage"
                                     onChange={this.inputStageChange}

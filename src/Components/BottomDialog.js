@@ -27,8 +27,7 @@ export default function BottomDialog() {
 
   return (
     <div>
-      <KeyboardArrowUpIcon onClick={handleClickOpen}>>
-
+      <KeyboardArrowUpIcon fontSize="large" color="primary" onClick={handleClickOpen}>
       </KeyboardArrowUpIcon>
       <Dialog
         open={open}
@@ -37,14 +36,14 @@ export default function BottomDialog() {
         onClose={handleClose}
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
-      >        
+      >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
             built by <a href="http://www.twitter.com/HandleChanger" target="_blank">Johnny<TwitterIcon style={{ fontSize: 18 }}></TwitterIcon></a> with React
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <ArrowDownwardIcon onClick={handleClose} color="primary"></ArrowDownwardIcon>
+          <ArrowDownwardIcon style={{ fontSize: 20 }} onClick={handleClose} color="primary"></ArrowDownwardIcon>
         </DialogActions>
       </Dialog>
     </div>
