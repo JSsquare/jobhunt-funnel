@@ -6,6 +6,12 @@
   margin: 40px 0px 40px 0px;
   font-family: 'Raleway', sans-serif;
 }
+#heading {
+  font-weight: bold;
+  color: #3f51b5;
+  text-decoration: underline;
+  margin-top: 5px;
+}
 .digit {
   font-family: 'Poppins', sans-serif;
   font-weight: 900;
@@ -14,7 +20,7 @@
 }
 .stage {
   font-weight: 900;
-  background: linear-gradient(180deg,rgba(255,255,255,0) 50%, #FFD0AE 50%);  
+  background: linear-gradient(180deg,rgba(255,255,255,0) 65%, #eef0fd 65%);  
 }
 .paper-container {
   display: flex;
@@ -27,27 +33,10 @@
   padding: 20px;
   margin: 20px 0px 20px 0px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bottom-arrow {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }

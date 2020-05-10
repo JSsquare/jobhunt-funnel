@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from "@material-ui/core/Grid";
 import Slider from '@material-ui/core/Slider';
 import Input from "@material-ui/core/Input";
+import BottomDialog from './BottomDialog'
 import '../App.css';
 
 class Container extends React.Component {
@@ -17,6 +18,7 @@ class Container extends React.Component {
         }; 
         this.stageChange = this.stageChange.bind(this);     
     }
+    
     inputStageChange = event => {
         if(event.target.id === 'applications-stage'){
             this.localValues.applicationValue = event.target.value;
@@ -51,9 +53,10 @@ class Container extends React.Component {
         this.props.stageChange(newValue, sliderName);
     }    
     render(){        
-        return ( 
-            <Paper elevation={6} className="paper-container">              
+        return (             
+            <Paper elevation={6} className="paper-container">                          
              <Grid container spacing={3} xs={10}  alignItems="center" justify="center" >
+                 <Grid item xs={12} id="heading">YOUR JOB HUNT FUNNEL</Grid>
                 <Grid item xs={12} className="stage-grid">
                     <Paper elevation={3} className="paper-stage"> 
                         <Grid container spacing={2}>
@@ -118,12 +121,28 @@ class Container extends React.Component {
                 <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>  
                     <Grid item xs={12}>Out Of <span className="digit">{this.props.propState.phoneinterview}</span> Recruiter Screens. How Many Do You Think Will Advance To <span className="stage">Tech/Phone Interview?</span></Grid>
-                    <Grid item xs={12}><Slider id="phoneinterview-input"
+                    <Grid item xs={10}><Slider id="phoneinterview-input"
                             min={0}
                             max={this.props.propState.phoneinterview}
                             value={this.localValues.phoneinterviewValue}
                             onChange={this.stageChange('phoneinterview-input')}/>
                     </Grid>
+                    <Grid item xs={2}>
+                                <Input                                    
+                                    value={this.localValues.phoneinterviewValue}
+                                    margin="dense"
+                                    id="phoneinterview-stage"
+                                    onChange={this.inputStageChange}
+                                    onBlur={this.inputStageChange}
+                                    inputProps={{
+                                    step: 10,
+                                    min: 0,
+                                    max: 500,
+                                    type: "number",
+                                    "aria-labelledby": "input-slider"
+                                    }}
+                                />
+                    </Grid>                    
                 </Grid>
                 </Paper>
             </Grid>
@@ -132,13 +151,29 @@ class Container extends React.Component {
                 <Paper elevation={3} className="paper-stage">
                 <Grid container spacing={2}>
                     <Grid item xs={12}>Out Of <span className="digit">{this.props.propState.onsiteinterview}</span> Tech/Phone Interviews. How Many Do You Think Will Advance To An <span className="stage">Onsite Interview?</span></Grid>
-                    <Grid item xs={12}><Slider id="onsiteinterview-input"
+                    <Grid item xs={10}><Slider id="onsiteinterview-input"
                             min={0}
                             max={this.props.propState.onsiteinterview}
                             value={this.localValues.onsiteinterviewValue}                            
                             onChange={this.stageChange('onsiteinterview-input')}/>
                     </Grid>
-                </Grid>
+                    <Grid item xs={2}>
+                                <Input                                    
+                                    value={this.localValues.onsiteinterviewValue}
+                                    margin="dense"
+                                    id="onsiteinterview-stage"
+                                    onChange={this.inputStageChange}
+                                    onBlur={this.inputStageChange}
+                                    inputProps={{
+                                    step: 10,
+                                    min: 0,
+                                    max: 500,
+                                    type: "number",
+                                    "aria-labelledby": "input-slider"
+                                    }}
+                                />
+                    </Grid>                    
+                </Grid>                                    
                 </Paper>
             </Grid>
 
@@ -157,9 +192,15 @@ class Container extends React.Component {
                     </Grid>              
                     </Grid>
                 </Paper>
-            </Grid>                
-            </Grid>
-            </Paper>     
+            </Grid> 
+
+            <Grid item xs={12}>
+
+            </Grid>  
+        </Grid> 
+
+       
+        </Paper>                        
         )
     }
 }

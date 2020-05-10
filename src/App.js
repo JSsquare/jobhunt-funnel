@@ -81,7 +81,7 @@ class App extends React.Component {
 
   render() {    
     return (      
-        <div className="App">
+        <div className="App">          
           <OfferSnackBar offers={this.state.final > 0} offerNumber={this.state.final}/>
           <Container propState={this.state} stageChange={this.handleStageChange}/>
         </div>        
