@@ -39,7 +39,7 @@ export default function BottomDialog() {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            built by <a href="http://www.twitter.com/HandleChanger" target="_blank">Johnny<TwitterIcon style={{ fontSize: 18 }}></TwitterIcon></a> with React
+            built by <a href="https://bit.ly/my-twitter-profie" target="_blank">Johnny<TwitterIcon style={{ fontSize: 18 }}></TwitterIcon></a> with React
           </DialogContentText>
         </DialogContent>
         <DialogActions>
