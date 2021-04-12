@@ -60,7 +60,7 @@ class Container extends React.Component {
                 <Grid item xs={12} className="stage-grid">
                     <Paper elevation={3} className="paper-stage"> 
                         <Grid container spacing={2}>
-                            <Grid item xs={12}>How Many <span className="stage">Number of Jobs Did I Apply </span>? <span className="digit">{this.localValues.applicationValue}</span></Grid>
+                            <Grid item xs={12}><span className="stage">Jobs Applied </span>? <span className="digit">{this.localValues.applicationValue}</span></Grid>
                             <Grid item xs={10}><Slider id="applications-input"
                                 min={0}
                                 max={500}
